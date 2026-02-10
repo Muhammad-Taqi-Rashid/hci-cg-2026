@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding for consistent rendering -->
   <meta charset="UTF-8">
-
-  <!-- Page title shown in browser tab and announced by screen readers -->
-  <title>Interaction Analysis – Norman vs. GOMS</title>
+  <title>Norman vs GOMS – Interaction Analysis</title>
 
   <style>
-    /* Minimal styling (Lab 01 allowed): highlight rows where Norman and GOMS directly correspond */
-    .norman-goms-match {
-      background-color: #fff3cd; /* warm, subtle amber */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #f2f2f2;
+    }
+
+    nav a {
+      color: #003366;
+      font-size: 16px;
+    }
+
+    nav a[aria-current="page"] {
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    table {
+      font-size: 15px;
+    }
+
+    caption {
+      font-size: 16px;
+      color: #333333;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Page header: identifies topic and context -->
+  <!-- ===== Page Header ===== -->
   <header>
-    <h1>Interaction Analysis</h1>
-    <p>Norman (1988) vs. GOMS (1983): Enable Wi-Fi (iPhone 13 / Samsung S25)</p>
+    <h1>Norman vs GOMS Comparison</h1>
+
+   <nav aria-label="Primary navigation">
+<ul>
+<li><a href="index.html" aria-current="page">Home</a></li>
+<li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+<li><a href="analysis.html">Toggle Switch</a></li>
+<li><a href="AutomaticSyringe.html">Dose Calculator</a></li>
+<li><a href="ExpenseSharing.html">Expense Sharing</a></li>
+<li><a href="labexam.html">Lab Exam</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
   </header>
 
-  <!-- Primary navigation: consistent across all site pages -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-
-      <!-- Current page indicated for screen reader orientation -->
-      <li><a href="analysis.html" aria-current="page">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main landmark: unique content of this page -->
+  <!-- ===== Main Content ===== -->
   <main>
 
+    <!-- Comparison Table Section -->
     <section>
-      <h2>Norman vs. GOMS Comparison Table</h2>
+      <h2>Norman and GOMS Comparison Table</h2>
 
-      <!-- Data table: caption + thead/tbody support accessibility -->
       <table border="1">
         <caption>
           Comparison of Norman’s stages and GOMS concepts using the Wi-Fi toggle example
@@ -175,23 +207,105 @@
           </tr>
         </tbody>
       </table>
-
     </section>
+<!-- Purpose Section -->
+<section>
+  <h2>Purpose of the Comparison</h2>
+  <p>
+    This page compares Norman’s Action Cycle with the GOMS model in order to
+    understand how user goals, actions, and evaluations are represented in
+    interaction analysis.
+  </p>
+</section>
 
-    <section>
-      <h2>Quick Note</h2>
-      <p>
-        This page is included as a conceptual reference for Lab 01. Students should focus on writing clean,
-        semantic HTML and be able to explain how their structure supports usability and accessibility.
-      </p>
-    </section>
+<!-- Explanation Section -->
+<section>
+  <h2>Conceptual Background</h2>
+  <p>
+    Norman’s model focuses on the user’s cognitive stages during interaction,
+    while GOMS provides a structured description of tasks in terms of goals,
+    operators, methods, and selection rules.
+  </p>
+</section>
+
+<!-- Table Analysis Sections -->
+<section>
+  <h2>Purpose of the Parallel Analysis</h2>
+  <p>
+    The comparison table demonstrates how Norman’s Execution–Evaluation Cycle
+    and the GOMS framework align or diverge when applied to a practical example
+    (toggling Wi‑Fi). It shows how Norman’s cognitive stages map onto GOMS’s
+    structured task elements, highlighting overlaps in goal setting, planning,
+    and execution, while also revealing where Norman provides richer cognitive
+    detail that GOMS abstracts away.
+  </p>
+</section>
+
+<section>
+  <h2>Alignment and Divergence</h2>
+  <p>
+    Three rows in the table are marked with a check (✅) because they represent
+    strong conceptual matches:
+  </p>
+  <ul>
+    <li><strong>Goal ↔ GOAL:</strong> Both models capture the user’s intention
+        directly.</li>
+    <li><strong>Plan ↔ Method &amp; Selection Rules:</strong> Norman’s planning
+        stage corresponds to GOMS’s decomposition into methods and choice logic.</li>
+    <li><strong>Execute ↔ Operator:</strong> Both models acknowledge the physical
+        action as a timed operator.</li>
+  </ul>
+  <p>
+    The other two rows (Specify, and Perceive/Interpret/Evaluate) diverge because
+    GOMS does not explicitly model these stages. Norman accounts for them in
+    detail, while GOMS assumes perfect perception and interpretation.
+  </p>
+</section>
+
+<section>
+  <h2>Role of Cognitive Detail</h2>
+  <p>
+    Norman’s model emphasizes the mental work users perform before and after
+    execution: specifying actions, perceiving feedback, interpreting results, and
+    evaluating outcomes. These stages are critical for understanding usability
+    issues, especially the gulfs of execution and evaluation. GOMS, by contrast,
+    focuses on expert routine performance and abstracts away these cognitive
+    subtleties.
+  </p>
+</section>
+
+<section>
+  <h2>Implications for Usability Analysis</h2>
+  <p>
+    By blending Norman’s cognitive cycle with GOMS’s structured task analysis,
+    designers gain a layered view: Norman explains why usability problems occur,
+    GOMS structures how tasks are decomposed, and KLM predicts execution time.
+    This integrated perspective helps identify mismatches between user goals and
+    system actions, as well as gaps in feedback that hinder effective evaluation.
+  </p>
+</section>
+
+<section>
+  <h2>Legend for Alignment Marks</h2>
+  <p>
+    In the table, the ✅ symbol indicates a strong conceptual match between
+    Norman’s stages and GOMS elements. Rows without a check highlight areas
+    where Norman’s model provides additional cognitive detail that GOMS does not
+    explicitly capture.
+  </p>
+</section>
 
   </main>
 
-  <!-- Footer: supplementary navigation -->
+  <!-- ===== Footer ===== -->
   <footer>
-    <p><a href="index.html">Back to Home</a></p>
+    <p>
+      Assignment 01 – Human–Computer Interaction  
+      <br>
+      Based on Dix et al., Human–Computer Interaction
+    </p>
   </footer>
 
 </body>
 </html>
+
