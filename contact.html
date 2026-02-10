@@ -1,61 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding for consistent text rendering -->
   <meta charset="UTF-8">
+  <title>Contact – Human Computer Interaction</title>
 
-  <!-- Page title shown in browser tab and announced by screen readers -->
-  <title>Don Norman – Contact</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #f2f2f2;
+    }
+
+    nav a {
+      color: #003366;
+      font-size: 16px;
+    }
+
+    nav a[aria-current="page"] {
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Page header: identifies the page purpose -->
+  <!-- ===== Header ===== -->
   <header>
     <h1>Contact</h1>
+
+<nav aria-label="Primary navigation">
+<ul>
+<li><a href="index.html" aria-current="page">Home</a></li>
+<li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+<li><a href="analysis.html">Toggle Switch</a></li>
+<li><a href="AutomaticSyringe.html">Dose Calculator</a></li>
+<li><a href="ExpenseSharing.html">Expense Sharing</a></li>
+<li><a href="labexam.html">Lab Exam</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
   </header>
 
-  <!-- Primary navigation: identical structure across all pages -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-
-      <!-- Current page is indicated using aria-current -->
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
-
-      <li><a href="analysis.html">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
-
-    </ul>
-  </nav>
-
-  <!-- Main landmark: primary content of this page -->
+  <!-- ===== Main Content ===== -->
   <main>
-    <form action="#" method="post">
-      
-      <!-- Groups related form controls and provides context -->
-      <fieldset>
-        <legend>Send a Message</legend>
 
-        <!-- Label explicitly associated with its input -->
-        <label for="subject">Subject</label><br>
-        <input type="text" id="subject" name="subject"><br><br>
+    <section>
+      <h2>Get in Touch</h2>
+      <p>
+        This form allows users to contact the author regarding the Human–Computer
+        Interaction assignment.
+      </p>
+    </section>
 
-        <!-- Textarea with clear label for screen readers -->
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+    <section>
+      <h2>Contact Form</h2>
 
-        <!-- Submit button is keyboard accessible by default -->
-        <button type="submit">Send</button>
-      </fieldset>
+      <form action="#" method="post">
 
-    </form>
+        <div>
+          <label for="name">Full Name</label><br>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div>
+          <label for="email">Email Address</label><br>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <div>
+          <button type="submit">Send Message</button>
+        </div>
+
+      </form>
+    </section>
+
   </main>
 
-  <!-- Footer provides supplementary information -->
+  <!-- ===== Footer ===== -->
   <footer>
-    <p>Keyboard accessible form with screen-reader friendly labels.</p>
+    <p>
+      Assignment 01 – Human–Computer Interaction  
+      <br>
+      Based on Dix et al., Human–Computer Interaction
+    </p>
   </footer>
 
 </body>
