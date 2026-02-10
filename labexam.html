@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Norman vs GOMS – Interaction Analysis</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #f2f2f2;
+    }
+
+    nav a {
+      color: #003366;
+      font-size: 16px;
+    }
+
+    nav a[aria-current="page"] {
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    table {
+      font-size: 15px;
+    }
+
+    caption {
+      font-size: 16px;
+      color: #333333;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Page Header ===== -->
+  <header>
+    <h1>Norman vs GOMS Comparison</h1>
+
+   <nav aria-label="Primary navigation">
+<ul>
+<li><a href="index.html" aria-current="page">Home</a></li>
+<li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+<li><a href="analysis.html">Toggle Switch</a></li>
+<li><a href="AutomaticSyringe.html">Dose Calculator</a></li>
+<li><a href="ExpenseSharing.html">Expense Sharing</a></li>
+<li><a href="labexam.html">Lab Exam</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+
+    <section>
+  <h2>Lab Exam Practice (HTML Foundations)</h2>
+  <p>These practice questions are within Lab 01 scope. They focus on semantic HTML, navigation structure, accessibility basics, and tables.</p>
+
+  <!-- Part A -->
+  <h3>Part A: Find Mistakes (Identify + Fix)</h3>
+  <p>In the exam, you will (1) identify the mistake in one sentence and (2) write the corrected HTML.</p>
+
+  <table border="1">
+    <caption>Sample exam questions: fix common HTML structure and accessibility mistakes</caption>
+    <thead>
+      <tr>
+        <th scope="col">UI Element / Issue</th>
+        <th scope="col">Wrong HTML (with mistake)</th>
+        <th scope="col">Correct UI Element</th>
+        <th scope="col">Correct HTML</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 10 rows -->
+      <tr>
+        <th scope="row">Navigation link directly inside <code>ul</code></th>
+        <td><pre><code>&lt;ul&gt;
+  &lt;a href="home.html"&gt;Home&lt;/a&gt;
+&lt;/ul&gt;</code></pre></td>
+        <td>Links inside list items</td>
+        <td><pre><code>&lt;ul&gt;
+  &lt;li&gt;&lt;a href="home.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Form label not connected</th>
+        <td><pre><code>&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message"&gt;&lt;/textarea&gt;</code></pre></td>
+        <td>Label matches control id</td>
+        <td><pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message"&gt;&lt;/textarea&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Heading hierarchy skipped</th>
+        <td><pre><code>&lt;h1&gt;Title&lt;/h1&gt;
+&lt;h3&gt;Subtitle&lt;/h3&gt;</code></pre></td>
+        <td>Proper hierarchy</td>
+        <td><pre><code>&lt;h1&gt;Title&lt;/h1&gt;
+&lt;h2&gt;Subtitle&lt;/h2&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Table missing caption</th>
+        <td><pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre></td>
+        <td>Accessible table</td>
+        <td><pre><code>&lt;table&gt;
+  &lt;caption&gt;Models&lt;/caption&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Model&lt;/th&gt;&lt;th&gt;Predicts&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;/table&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Multiple aria-current</th>
+        <td><pre><code>&lt;a href="home.html" aria-current="page"&gt;Home&lt;/a&gt;
+&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;</code></pre></td>
+        <td>Only one current</td>
+        <td><pre><code>&lt;a href="home.html"&gt;Home&lt;/a&gt;
+&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Image missing alt</th>
+        <td><pre><code>&lt;img src="photo.jpg"&gt;</code></pre></td>
+        <td>Alt attribute added</td>
+        <td><pre><code>&lt;img src="photo.jpg" alt="Portrait photo"&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Button outside form</th>
+        <td><pre><code>&lt;button&gt;Submit&lt;/button&gt;</code></pre></td>
+        <td>Button inside form</td>
+        <td><pre><code>&lt;form&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Improper nesting</th>
+        <td><pre><code>&lt;p&gt;Hello &lt;div&gt;World&lt;/div&gt;&lt;/p&gt;</code></pre></td>
+        <td>Block elements not inside inline</td>
+        <td><pre><code>&lt;p&gt;Hello&lt;/p&gt;
+&lt;div&gt;World&lt;/div&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Missing lang attribute</th>
+        <td><pre><code>&lt;html&gt;</code></pre></td>
+        <td>Language declared</td>
+        <td><pre><code>&lt;html lang="en"&gt;</code></pre></td>
+      </tr>
+      <tr>
+        <th scope="row">Table headers missing scope</th>
+        <td><pre><code>&lt;th&gt;Name&lt;/th&gt;</code></pre></td>
+        <td>Scope added</td>
+        <td><pre><code>&lt;th scope="col"&gt;Name&lt;/th&gt;</code></pre></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Part B -->
+  <h3>Part B: True / False</h3>
+  <ul>
+    <li><strong>T/F:</strong> Every link inside <code>&lt;ul&gt;</code> must be inside <code>&lt;li&gt;</code>.</li>
+    <li><strong>T/F:</strong> A page may have multiple <code>&lt;h1&gt;</code> headings for styling.</li>
+    <li><strong>T/F:</strong> <code>aria-current="page"</code> marks the active navigation item.</li>
+    <li><strong>T/F:</strong> A form is accessible without labels.</li>
+    <li><strong>T/F:</strong> KLM predicts execution time for expert users.</li>
+    <li><strong>T/F:</strong> Semantic elements improve accessibility and meaning.</li>
+    <li><strong>T/F:</strong> <code>&lt;div&gt;</code> conveys meaning by itself.</li>
+    <li><strong>T/F:</strong> Captions are optional for accessible tables.</li>
+    <li><strong>T/F:</strong> Headings should follow logical hierarchy.</li>
+    <li><strong>T/F:</strong> Images must always have alt text.</li>
+  </ul>
+
+  <!-- Part C -->
+  <h3>Part C: Short Answer</h3>
+  <ol>
+    <li>Explain the difference between a semantic element (e.g., <code>nav</code>) and a generic element (e.g., <code>div</code>).</li>
+    <li>Why does KLM not model high-level planning and interpretation?</li>
+    <li>What is the purpose of <code>aria-label</code> in navigation?</li>
+    <li>Why should headings not skip levels?</li>
+    <li>How does a caption improve table accessibility?</li>
+    <li>What is the difference between <code>id</code> and <code>for</code> in form labels?</li>
+    <li>Why is <code>lang</code> attribute important in HTML?</li>
+    <li>Explain why alt text is critical for screen readers.</li>
+    <li>What is the difference between semantic and presentational markup?</li>
+    <li>Why should only one navigation item have <code>aria-current="page"</code>?</li>
+  </ol>
+
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>
+      Assignment 01 – Human–Computer Interaction  
+      <br>
+      Based on Dix et al., Human–Computer Interaction
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Norman vs GOMS – Interaction Analysis</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #f2f2f2;
+    }
+
+    nav a {
+      color: #003366;
+      font-size: 16px;
+    }
+
+    nav a[aria-current="page"] {
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    table {
+      font-size: 15px;
+    }
+
+    caption {
+      font-size: 16px;
+      color: #333333;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Page Header ===== -->
+  <header>
+   <section>
+    <h1>Expense Sharing Interface Analysis</h1>
+    <p>
+      This page analyzes the “Add Expense” interaction in an expense-sharing app
+      (like Splitwise) using Norman’s Action Cycle, GOMS, and the Keystroke-Level
+      Model (KLM). It also presents a wireframe sketch for the Add Expense screen
+      to illustrate design considerations.
+    </p>
+  </section>
+
+   <nav aria-label="Primary navigation">
+<ul>
+<li><a href="index.html" aria-current="page">Home</a></li>
+<li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+<li><a href="analysis.html">Toggle Switch</a></li>
+<li><a href="AutomaticSyringe.html">Dose Calculator</a></li>
+<li><a href="ExpenseSharing.html">Expense Sharing</a></li>
+<li><a href="labexam.html">Lab Exam</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+
+
+<!-- Wireframe sketch description -->
+  <section>
+    <h2>Interface Design – Add Expense Screen (Wireframe Layout)</h2>
+    <p>
+      The Add Expense screen should provide a clear, structured layout to minimize
+      cognitive load and social friction:
+    </p>
+    <ul>
+      <li><strong>Title Field:</strong> “Expense Description” (e.g., Dinner at Kababjees)</li>
+      <li><strong>Amount Field:</strong> Numeric input with currency symbol (PKR)</li>
+      <li><strong>Payer Selector:</strong> Dropdown with profile pictures</li>
+      <li><strong>Participants Checklist:</strong> Names with checkboxes and status indicators</li>
+      <li><strong>Split Options:</strong> Equal / Custom / Percentage</li>
+      <li><strong>Submit Button:</strong> Prominent color, clear label (“Save Expense”)</li>
+      <li><strong>Feedback Area:</strong> Confirmation message and updated balances</li>
+    </ul>
+    <p>
+      This wireframe ensures visibility, error prevention, and social transparency
+      in expense recording.
+    </p>
+  </section>
+
+<!-- Norman’s Table -->
+  <!-- Norman’s stages corrected table -->
+  <section>
+    <h2>Norman’s Stages Applied to Expense Sharing</h2>
+  <table border="1">
+    <caption>
+      Norman’s Execution–Evaluation Cycle applied to “Add Expense” in Splitwise
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Norman’s Stage</th>
+        <th scope="col">Real-World Example (Adding Dinner Expense)</th>
+        <th scope="col">HCI Challenge &amp; Design Solution</th>
+        <th scope="col">Social Dimension</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Goal</th>
+        <td>
+          “Record that Maria paid 5000 PKR for group dinner at Kababjees so everyone pays fairly.”
+        </td>
+        <td>
+          <b>Complex intent:</b> not just data entry, but ensuring fairness and transparency.
+        </td>
+        <td>
+          Avoiding arguments about money among friends; maintaining trust.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Plan</th>
+        <td>
+          1. Open Splitwise<br>
+          2. Tap “Add Expense”<br>
+          3. Enter description & amount<br>
+          4. Select payer<br>
+          5. Choose participants<br>
+          6. Select split method<br>
+          7. Submit
+        </td>
+        <td>
+          <b>Multiple decision points:</b> who ate, who should pay, is the split fair?<br>
+          Design must reduce decision complexity with clear defaults and options.
+        </td>
+        <td>
+          <b>Sensitive social context:</b> fairness and inclusion of all relevant participants.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Specify</th>
+        <td>
+          “Type ‘Dinner Kababjees’, enter ‘5000’, select ‘Maria’ as payer, check Ali, Ahmed, Sara, choose ‘Equal split’, tap ‘Save’.”
+        </td>
+        <td>
+          <b>Memory burden:</b> recalling names, amounts, and details.<br>
+          <b>Solution:</b> autocomplete, participant suggestions, and contextual defaults.
+        </td>
+        <td>
+          <b>Social pressure to be accurate :</b> fear of being seen as unfair or careless.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Execute</th>
+        <td>
+          <b>Actions:</b> typing, selecting payer, checking participants, choosing split, confirming.
+        </td>
+        <td>
+          <b>Interface needs:</b> clear fields, dropdowns with profile pictures, checklists, split options, and a distinct “Save” button.<br>
+          Design must minimize slips and support quick entry.
+        </td>
+        <td>
+          Physical actions may interrupt ongoing social interaction at the dinner table.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Perceive</th>
+        <td>
+          <b>Feedback:</b><br> 
+	1. green checkmark animation<br> 
+	2. “Expense added!” message<br>
+	3. updated balances<br>
+	4. notification sounds<br> 
+	5. new entry in activity list.
+        </td>
+        <td>
+          Multiple feedback channels required to ensure visibility and confirmation.
+        </td>
+        <td>
+          Others must also perceive the action happened to avoid confusion or disputes.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Interpret</th>
+        <td>
+          “The expense is saved. Ali, Ahmed, and Sara each owe 1250 PKR. Maria will be reimbursed 3750 PKR. Notifications sent to all.”
+        </td>
+        <td>
+          <b>Complex interpretation:</b> understanding financial implications and system calculations.
+        </td>
+        <td>
+          <b>Social trust:</b> did everyone get notified, and do they agree with the split?
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Evaluate</th>
+        <td>
+          1. Check expense in group history<br>
+          2. Verify all participants included<br>
+          3. Confirm split calculations<br>
+          4. Check others acknowledged receipt
+        </td>
+        <td>
+          <b>Multi-step verification required;</b> design should support easy review and correction.
+        </td>
+        <td>
+          <b>Social verification:</b> did anyone object or raise concerns? Is fairness perceived?
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Norman’s Execution–Evaluation Cycle</h3>
+  <p>
+    This table applies Norman’s seven stages of action to the “Add Expense”
+    task in Splitwise. It highlights cognitive processes, usability challenges,
+    and social dimensions such as fairness and trust. Norman’s model explains
+    <b>why usability problems occur</b> by focusing on gulfs of execution and
+    evaluation.
+  </p>
+</section>
+
+ <section>
+  <h2>GOMS Model Applied to Expense Sharing</h2>
+
+  <table border="1">
+    <caption>
+      GOMS decomposition of the “Add Expense” task in Splitwise
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">GOMS Element</th>
+        <th scope="col">Real-World Example (Adding Dinner Expense)</th>
+        <th scope="col">HCI Challenge &amp; Design Solution</th>
+        <th scope="col">Social Dimension</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Goal</th>
+        <td>
+          <b>Record dinner expense fairly</b> so that Maria’s payment of 5000 PKR
+          is shared among Ali, Ahmed, and Sara.
+        </td>
+        <td>
+          The system must support clear goal articulation and mapping to actions.
+        </td>
+        <td>
+          Ensures fairness and avoids disputes about who owes what.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Operators</th>
+        <td>
+          <b>Tap</b> buttons, <b>Type</b> description and amount, <b>Select</b> payer,
+          <b>Check</b> participants, <b>Confirm</b> split.
+        </td>
+        <td>
+          Each operator must be simple, visible, and error-tolerant.
+        </td>
+        <td>
+          Physical actions should be quick to avoid disrupting social interaction.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Methods</th>
+        <td>
+          <b>Method A:</b> Equal split among all participants.<br>
+          <b>Method B:</b> Custom split (e.g., exclude someone or adjust shares).<br>
+          <b>Method C:</b> Percentage-based split (rare but possible).
+        </td>
+        <td>
+          Interface must present methods clearly and allow easy switching.
+        </td>
+        <td>
+          Social sensitivity: choice of method must reflect group agreement.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Selection Rules</th>
+        <td>
+          <b>If</b> all participants ate → use Equal split.<br>
+          <b>If</b> some did not eat → use Custom split.<br>
+          <b>If</b> contributions differ → use Percentage split.
+        </td>
+        <td>
+          Rules must be intuitive and supported by interface defaults.
+        </td>
+        <td>
+          Prevents unfairness and ensures transparency in group decisions.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Task Structure</th>
+        <td>
+          Hierarchical decomposition:<br>
+          • Goal: Record expense<br>
+          • Sub-goals: Enter details, select payer, choose participants, select split, save<br>
+          • Operators: Tap, type, select, check, confirm
+        </td>
+        <td>
+          Structured task flow reduces cognitive load and supports expert use.
+        </td>
+        <td>
+          Clear structure reassures group members that process is fair and consistent.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Predictions</th>
+        <td>
+          GOMS predicts <b>relative efficiency</b> of different methods (Equal vs. Custom).
+        </td>
+        <td>
+          Designers can compare task times and optimize interface for common cases.
+        </td>
+        <td>
+          Faster, simpler methods reduce social friction and encourage adoption.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>GOMS Task Decomposition</h3>
+  <p>
+    This table analyzes the same “Add Expense” task using the GOMS framework.
+    It breaks the task into <b>Goals, Operators, Methods, and Selection Rules</b>,
+    showing how expert users structure routine actions. GOMS predicts
+    <b>relative efficiency</b> of different methods and helps designers
+    understand task logic.
+  </p>
+</section>
+
+<!-- KLM Table -->
+<section>
+  <h2>Keystroke-Level Model (KLM) Applied to Expense Sharing</h2>
+
+  <table border="1">
+    <caption>
+      KLM operator-level analysis of “Add Expense” in Splitwise
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">KLM Operator</th>
+        <th scope="col">Real-World Example (Adding Dinner Expense)</th>
+        <th scope="col">HCI Challenge &amp; Design Solution</th>
+        <th scope="col">Social Dimension</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">K – Keystroke</th>
+        <td>
+          <b>Typing</b> “Dinner Kababjees” in description field and entering “5000” in amount field.
+        </td>
+        <td>
+          Must minimize typing errors; numeric field should enforce valid input (currency format).
+        </td>
+        <td>
+          Mistyped values can cause disputes; accuracy is socially critical.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">P – Pointing</th>
+        <td>
+          <b>Pointing</b> to dropdown to select payer (Maria) and to checkboxes for participants (Ali, Ahmed, Sara).
+        </td>
+        <td>
+          Targets must be large and well-spaced to reduce slips; profile pictures aid recognition.
+        </td>
+        <td>
+          Ensures correct inclusion of participants; omission may be perceived as unfair.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">B – Button Press</th>
+        <td>
+          <b>Pressing</b> “Save Expense” button to confirm entry.
+        </td>
+        <td>
+          Button must be distinct in color and label to avoid accidental presses.
+        </td>
+        <td>
+          Clear confirmation reassures group that expense was recorded.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">H – Homing</th>
+        <td>
+          <b>Switching</b> between keyboard (typing description/amount) and mouse/touch (selecting payer, participants).
+        </td>
+        <td>
+          Excessive homing increases task time; design should minimize device switching.
+        </td>
+        <td>
+          Smooth flow avoids awkward pauses during social interaction.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">M – Mental Preparation</th>
+        <td>
+          <b>Pausing</b> to decide split method (Equal vs. Custom).
+        </td>
+        <td>
+          Interface should provide clear defaults (Equal split) to reduce decision time.
+        </td>
+        <td>
+          Socially sensitive: choice reflects fairness; hesitation may cause tension.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">R – System Response</th>
+        <td>
+          <b>System feedback</b>: “Expense added!” message, updated balances, notifications sent.
+        </td>
+        <td>
+          Response must be immediate and unambiguous; delays increase uncertainty.
+        </td>
+        <td>
+          Group members rely on visible confirmation to trust the record.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Sequence Example</th>
+        <td>
+          H[keyboard] → K[“Dinner Kababjees”] → K[5000] → H[mouse] → P[Select payer] → P[Check participants] → M[Choose split] → B[Save] → R[Confirmation].
+        </td>
+        <td>
+          Sequence shows execution-level detail; designers can estimate task time.
+        </td>
+        <td>
+          Predictable flow reassures users and supports social transparency.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Prediction</th>
+        <td>
+          KLM predicts <b>execution time</b> for expert, error-free performance of the Add Expense task.
+        </td>
+        <td>
+          Useful for comparing efficiency of different interface layouts (e.g., fewer homing actions).
+        </td>
+        <td>
+          Faster, smoother execution reduces social disruption and increases trust.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Keystroke-Level Model (KLM)</h3>
+  <p>
+    This table applies the Keystroke-Level Model to the expense-sharing task,
+    focusing on <b>execution-level operators</b> such as keystrokes, pointing,
+    button presses, homing, mental preparation, and system response. KLM
+    predicts <b>execution time</b> for expert, error-free performance, allowing
+    designers to compare interface efficiency at the operator level.
+  </p>
+  <!-- KLM table here -->
+</section>
+
+
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>
+      Assignment 01 – Human–Computer Interaction  
+      <br>
+      Based on Dix et al., Human–Computer Interaction
+    </p>
+  </footer>
+
+</body>
+</html>
